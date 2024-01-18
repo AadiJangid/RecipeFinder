@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block content %}
+<br />
+<h1></h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="generalSearch">General Terms:</label>
+        <input type="text" class="form-control" id="generalSearch" name="generalSearch" placeholder="Enter general search terms">
+    </div>
+    <div class="form-group">
+        <label for="ingredientsList">List of ingredients you want to appear in your search:</label>
+        <input type="text" class="form-control" id="ingredientsList" name="ingredientsList" placeholder="Make sure you have no spelling errors and separate each ingredient with a comma, ex: paprika,ginger,chicken">
+    </div>
+    <div class="form-group">
+        <label for="diet">Diet Type:</label>
+        <select class="form-control" id="diet" name="diet">
+            <option>Balanced</option>
+            <option>High-Protein</option>
+            <option>High-Fiber</option>
+            <option>Low-Fat</option>
+            <option>Low-Carb</option>
+            <option>Low-Sodium</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="cuisine">Cuisine: </label>
+        <select class="form-control" id="cuisine" name="cuisine">
+            <option>American</option>
+            <option>Asian</option>
+            <option>British</option>
+            <option>Caribbean</option>
+            <option>Central Europe</option>
+            <option>Chinese</option>
+            <option>Eastern Europe</option>
+            <option>French</option>
+            <option>Indian</option>
+            <option>Italian</option>
+            <option>Japanese</option>
+            <option>Kosher</option>
+            <option>Mediterranean</option>
+            <option>Mexican</option>
+            <option>Middle Eastern</option>
+            <option>Nordic</option>
+            <option>South American</option>
+            <option>South East Asian</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="meal">Meal: </label>
+        <select class="form-control" id="meal" name="meal">
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+            <option>Snack</option>
+        </select>
+    </div>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary" align="center">Search</button>
+</form>
+{% endblock %}

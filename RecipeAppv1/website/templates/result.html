@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block content %}
+<br />
+<h2 align="center">Results</h2>
+<br />
+<br />
+
+{% if resultList|length % 2 == 0 %}
+    {% for i in range(0,resultList|length,2) %}
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <img class="card-img-top" style="height:350px" src={{resultList[i][1]}}>
+                    <div class="card-body">
+                        <h4 class="card-title">{{resultList[i][0]}}</h4>
+                        <a href={{resultList[i][2]}} class="btn btn-outline-info">Visit Site</a>
+                        <a href="#" class="btn btn-outline-dark">Add to List</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <img class="card-img-top" style="height:350px" src={{resultList[i+1][1]}}>
+                    <div class="card-body">
+                        <h4 class="card-title">{{resultList[i+1][0]}}</h4>
+                        <a href={{resultList[i+1][2]}} class="btn btn-outline-info">Visit Site</a>
+                        <a href="#" class="btn btn-outline-dark">Add to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    {% endfor %}
+{% else %}
+    {% for i in range(0,resultList|length-1,2) %}
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <img class="card-img-top" style="height:350px" src={{resultList[i][1]}}>
+                    <div class="card-body">
+                        <h4 class="card-title">{{resultList[i][0]}}</h4>
+                        <a href={{resultList[i][2]}} class="btn btn-outline-info">Visit Site</a>
+                        <a href="#" class="btn btn-outline-dark" onClick="">Add to List</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <img class="card-img-top" style="height:350px" src={{resultList[i+1][1]}}>
+                    <div class="card-body">
+                        <h4 class="card-title">{{resultList[i+1][0]}}</h4>
+                        <a href={{resultList[i+1][2]}} class="btn btn-outline-info">Visit Site</a>
+                        <a href="#" class="btn btn-outline-dark">Add to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    {% endfor %}
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" style="height:350px" src={{resultList[resultList|length-1][1]}}>
+                <div class="card-body">
+                    <h4 class="card-title">{{resultList[resultList|length-1][0]}}</h4>
+                    <a href={{resultList[resultList|length-1][2]}} class="btn btn-outline-info">Visit Site</a>
+                    <a href="#" class="btn btn-outline-dark">Add to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% endblock %}
